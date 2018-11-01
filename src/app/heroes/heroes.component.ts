@@ -4,13 +4,13 @@ import { HEROES } from '../mock-heroes';
 @Component({
   selector: 'app-heroes',
   templateUrl: './heroes.component.html',
-  styleUrls: ['./heroes.component.sass']
+  styleUrls: ['./heroes.component.scss']
 })
 export class HeroesComponent implements OnInit {
   heroes = HEROES;
-  
-  constructor() { }
 
+  constructor() { }
+  
   ngOnInit() {
   }
 
