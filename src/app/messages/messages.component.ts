@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { MessageService } from '../message.service';
-import { CommonModule, NgFor } from '@angular/common';
+
 
 @Component({
     selector: 'app-messages',
-    imports: [NgFor, CommonModule],
+    imports: [],
     templateUrl: './messages.component.html',
     styleUrls: ['./messages.component.scss']
 })

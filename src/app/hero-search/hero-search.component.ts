@@ -7,11 +7,11 @@ import {
 import { Hero } from '../hero';
 import { HeroService } from '../hero.service';
 import { RouterModule } from '@angular/router';
-import { CommonModule, NgFor } from '@angular/common';
+import { CommonModule } from '@angular/common';
 
 @Component({
     selector: 'app-hero-search',
-    imports: [RouterModule, NgFor, CommonModule],
+    imports: [RouterModule, CommonModule],
     templateUrl: './hero-search.component.html',
     styleUrls: ['./hero-search.component.scss']
 })

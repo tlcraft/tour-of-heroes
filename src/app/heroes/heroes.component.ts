@@ -2,11 +2,11 @@ import { Component } from '@angular/core';
 import { HeroService } from '../hero.service';
 import { Hero } from '../hero';
 import { RouterModule } from '@angular/router';
-import { CommonModule, NgFor } from '@angular/common';
+
 
 @Component({
     selector: 'app-heroes',
-    imports: [RouterModule, NgFor, CommonModule],
+    imports: [RouterModule],
     templateUrl: './heroes.component.html',
     styleUrls: ['./heroes.component.scss']
 })

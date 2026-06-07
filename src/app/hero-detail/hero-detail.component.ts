@@ -1,13 +1,13 @@
 import { Component, Input } from '@angular/core';
 import { Hero } from '../hero';
 import { ActivatedRoute } from '@angular/router';
-import { CommonModule, Location, NgIf, UpperCasePipe } from '@angular/common';
+import { CommonModule, Location, UpperCasePipe } from '@angular/common';
 import { HeroService } from '../hero.service';
 import { FormsModule } from '@angular/forms';
 
 @Component({
     selector: 'app-hero-detail',
-    imports: [UpperCasePipe, NgIf, CommonModule, FormsModule],
+    imports: [UpperCasePipe, CommonModule, FormsModule],
     templateUrl: './hero-detail.component.html',
     styleUrls: ['./hero-detail.component.scss']
 })
