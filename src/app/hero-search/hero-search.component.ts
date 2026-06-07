@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { Observable, Subject } from 'rxjs';
 import {
    debounceTime, distinctUntilChanged, switchMap
@@ -13,6 +13,7 @@ import { CommonModule } from '@angular/common';
     selector: 'app-hero-search',
     imports: [RouterModule, CommonModule],
     templateUrl: './hero-search.component.html',
+    changeDetection: ChangeDetectionStrategy.Eager,
     styleUrls: ['./hero-search.component.scss']
 })
 export class HeroSearchComponent {

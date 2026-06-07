@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, ChangeDetectionStrategy } from '@angular/core';
 import { Hero } from '../hero';
 import { ActivatedRoute } from '@angular/router';
 import { CommonModule, Location, UpperCasePipe } from '@angular/common';
@@ -9,6 +9,7 @@ import { FormsModule } from '@angular/forms';
     selector: 'app-hero-detail',
     imports: [UpperCasePipe, CommonModule, FormsModule],
     templateUrl: './hero-detail.component.html',
+    changeDetection: ChangeDetectionStrategy.Eager,
     styleUrls: ['./hero-detail.component.scss']
 })
 export class HeroDetailComponent {

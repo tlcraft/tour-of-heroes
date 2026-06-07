@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { HeroService } from '../hero.service';
 import { Hero } from '../hero';
 import { RouterModule } from '@angular/router';
@@ -8,6 +8,7 @@ import { RouterModule } from '@angular/router';
     selector: 'app-heroes',
     imports: [RouterModule],
     templateUrl: './heroes.component.html',
+    changeDetection: ChangeDetectionStrategy.Eager,
     styleUrls: ['./heroes.component.scss']
 })
 export class HeroesComponent {

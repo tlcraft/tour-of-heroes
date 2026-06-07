@@ -1,18 +1,18 @@
-import { waitForAsync, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { HeroSearchComponent } from './hero-search.component';
-import { provideHttpClient } from '@angular/common/http';
+import { provideHttpClient, withXhr } from '@angular/common/http';
 
 describe('HeroSearchComponent', () => {
   let component: HeroSearchComponent;
   let fixture: ComponentFixture<HeroSearchComponent>;
 
-  beforeEach(waitForAsync(() => {
-    TestBed.configureTestingModule({
+  beforeEach(async () => {
+    await TestBed.configureTestingModule({
       imports: [ HeroSearchComponent ],
-      providers: [provideHttpClient()]
+      providers: [provideHttpClient(withXhr())]
     })
     .compileComponents();
-  }));
+  });
 
   beforeEach(() => {
     fixture = TestBed.createComponent(HeroSearchComponent);

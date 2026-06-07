@@ -1,16 +1,16 @@
-import { waitForAsync, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { MessagesComponent } from './messages.component';
 
 describe('MessagesComponent', () => {
   let component: MessagesComponent;
   let fixture: ComponentFixture<MessagesComponent>;
 
-  beforeEach(waitForAsync(() => {
-    TestBed.configureTestingModule({
+  beforeEach(async () => {
+    await TestBed.configureTestingModule({
       imports: [ MessagesComponent ]
     })
     .compileComponents();
-  }));
+  });
 
   beforeEach(() => {
     fixture = TestBed.createComponent(MessagesComponent);
