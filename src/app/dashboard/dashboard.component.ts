@@ -6,11 +6,10 @@ import { HeroSearchComponent } from '../hero-search/hero-search.component';
 import { CommonModule } from '@angular/common';
 
 @Component({
-  selector: 'app-dashboard',
-  standalone: true,
-  imports: [ RouterModule, HeroSearchComponent, CommonModule ],
-  templateUrl: './dashboard.component.html',
-  styleUrls: [ './dashboard.component.scss' ]
+    selector: 'app-dashboard',
+    imports: [RouterModule, HeroSearchComponent, CommonModule],
+    templateUrl: './dashboard.component.html',
+    styleUrls: ['./dashboard.component.scss']
 })
 export class DashboardComponent implements OnInit {
   heroes: Hero[] = [];

@@ -6,11 +6,10 @@ import { HeroService } from '../hero.service';
 import { FormsModule } from '@angular/forms';
 
 @Component({
-  selector: 'app-hero-detail',
-  standalone: true,
-  imports: [ UpperCasePipe, NgIf, CommonModule, FormsModule ],
-  templateUrl: './hero-detail.component.html',
-  styleUrls: ['./hero-detail.component.scss']
+    selector: 'app-hero-detail',
+    imports: [UpperCasePipe, NgIf, CommonModule, FormsModule],
+    templateUrl: './hero-detail.component.html',
+    styleUrls: ['./hero-detail.component.scss']
 })
 export class HeroDetailComponent {
   @Input() hero: Hero | undefined;

@@ -10,11 +10,10 @@ import { RouterModule } from '@angular/router';
 import { CommonModule, NgFor } from '@angular/common';
 
 @Component({
-  selector: 'app-hero-search',
-  standalone: true,
-  imports: [ RouterModule, NgFor, CommonModule],
-  templateUrl: './hero-search.component.html',
-  styleUrls: [ './hero-search.component.scss' ]
+    selector: 'app-hero-search',
+    imports: [RouterModule, NgFor, CommonModule],
+    templateUrl: './hero-search.component.html',
+    styleUrls: ['./hero-search.component.scss']
 })
 export class HeroSearchComponent {
   heroes$: Observable<Hero[]>;

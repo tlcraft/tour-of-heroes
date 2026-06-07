@@ -5,11 +5,10 @@ import { RouterModule } from '@angular/router';
 import { CommonModule, NgFor } from '@angular/common';
 
 @Component({
-  selector: 'app-heroes',
-  standalone: true,
-  imports: [ RouterModule, NgFor, CommonModule],
-  templateUrl: './heroes.component.html',
-  styleUrls: ['./heroes.component.scss']
+    selector: 'app-heroes',
+    imports: [RouterModule, NgFor, CommonModule],
+    templateUrl: './heroes.component.html',
+    styleUrls: ['./heroes.component.scss']
 })
 export class HeroesComponent {
   heroes: Hero[] = [];
