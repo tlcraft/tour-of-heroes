@@ -1,4 +1,4 @@
-import { Component, computed, inject, signal, effect, ChangeDetectionStrategy } from '@angular/core';
+import { Component, inject, signal, effect, ChangeDetectionStrategy } from '@angular/core';
 import { toSignal, toObservable } from '@angular/core/rxjs-interop';
 import { switchMap, map, filter } from 'rxjs/operators';
 import { Hero } from '../hero';
@@ -20,7 +20,6 @@ export class HeroDetailComponent {
   private heroService = inject(HeroService);
   
   editableHero = signal<Hero | null>(null);
-  name = computed(() => this.hero()?.name ?? '');
 
   private readonly heroId = toSignal(this.route.paramMap.pipe(
       map(p => Number(p.get('id'))),
