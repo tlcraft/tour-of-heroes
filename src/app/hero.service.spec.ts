@@ -1,11 +1,11 @@
 import { TestBed } from '@angular/core/testing';
 import { beforeEach, describe, expect, it  } from 'vitest';
 import { HeroService } from './hero.service';
-import { provideHttpClient, withXhr } from '@angular/common/http';
+import { provideHttpClientTesting } from '@angular/common/http/testing';
 
 describe('HeroService', () => {
   beforeEach(() => TestBed.configureTestingModule({
-    providers: [provideHttpClient(withXhr())]
+    providers: [provideHttpClientTesting]
   }));
 
   it('should be created', () => {

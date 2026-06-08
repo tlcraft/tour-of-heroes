@@ -1,7 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { beforeEach, describe, expect, it  } from 'vitest';
 import { HeroesComponent } from './heroes.component';
-import { provideHttpClient, withXhr } from '@angular/common/http';
+import { provideHttpClientTesting } from '@angular/common/http/testing';
 
 describe('HeroesComponent', () => {
   let component: HeroesComponent;
@@ -10,7 +10,7 @@ describe('HeroesComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [ HeroesComponent ],
-      providers: [provideHttpClient(withXhr())]
+      providers: [provideHttpClientTesting]
     })
     .compileComponents();
   });
