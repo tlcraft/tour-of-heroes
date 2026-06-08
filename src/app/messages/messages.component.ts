@@ -1,13 +1,13 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { MessageService } from '../message.service';
-import { CommonModule, NgFor } from '@angular/common';
+
 
 @Component({
-  selector: 'app-messages',
-  standalone: true,
-  imports: [NgFor, CommonModule],
-  templateUrl: './messages.component.html',
-  styleUrls: ['./messages.component.scss']
+    selector: 'app-messages',
+    imports: [],
+    templateUrl: './messages.component.html',
+    changeDetection: ChangeDetectionStrategy.Eager,
+    styleUrls: ['./messages.component.scss']
 })
 export class MessagesComponent implements OnInit {
 

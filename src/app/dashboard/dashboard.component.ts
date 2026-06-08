@@ -1,16 +1,16 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { Hero } from '../hero';
 import { HeroService } from '../hero.service';
 import { RouterModule } from '@angular/router';
 import { HeroSearchComponent } from '../hero-search/hero-search.component';
-import { CommonModule } from '@angular/common';
+
 
 @Component({
-  selector: 'app-dashboard',
-  standalone: true,
-  imports: [ RouterModule, HeroSearchComponent, CommonModule ],
-  templateUrl: './dashboard.component.html',
-  styleUrls: [ './dashboard.component.scss' ]
+    selector: 'app-dashboard',
+    imports: [RouterModule, HeroSearchComponent],
+    templateUrl: './dashboard.component.html',
+    changeDetection: ChangeDetectionStrategy.Eager,
+    styleUrls: ['./dashboard.component.scss']
 })
 export class DashboardComponent implements OnInit {
   heroes: Hero[] = [];

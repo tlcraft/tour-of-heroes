@@ -1,39 +1,34 @@
-import { Component } from '@angular/core';
+import { Component, computed, inject, signal } from '@angular/core';
+import { toSignal } from '@angular/core/rxjs-interop';
 import { HeroService } from '../hero.service';
 import { Hero } from '../hero';
-import { RouterModule } from '@angular/router';
-import { CommonModule, NgFor } from '@angular/common';
+import { RouterLink } from '@angular/router';
 
 @Component({
-  selector: 'app-heroes',
-  standalone: true,
-  imports: [ RouterModule, NgFor, CommonModule],
-  templateUrl: './heroes.component.html',
-  styleUrls: ['./heroes.component.scss']
+    selector: 'app-heroes',
+    imports: [RouterLink],
+    templateUrl: './heroes.component.html',
+    styleUrls: ['./heroes.component.scss']
 })
 export class HeroesComponent {
-  heroes: Hero[] = [];
+  private heroService = inject(HeroService);
 
-  constructor(private heroService: HeroService) { 
-    this.getHeroes();
-  }
+  private heroesFromApi = toSignal(this.heroService.getHeroes(), { initialValue: [] as Hero[] });
+  private localHeroes = signal<Hero[] | null>(null);
+  heroes = computed(() => this.localHeroes() ?? this.heroesFromApi());
 
   add(name: string): void {
-    name = name.trim();
-    if (!name) { return; }
-    this.heroService.addHero({ name } as Hero )
+    const trimmedName = name.trim();
+    if (!trimmedName) { return; }
+    this.heroService.addHero({ name: trimmedName } as Hero )
       .subscribe(hero => {
-        this.heroes.push(hero);
+        this.localHeroes.set([...this.heroes(), hero]);
       });
   }
 
   delete(hero: Hero): void {
-    this.heroes = this.heroes.filter(h => h !== hero);
+    const remainingHeroes = this.heroes().filter(h => h.id !== hero.id);
+    this.localHeroes.set(remainingHeroes);
     this.heroService.deleteHero(hero).subscribe();
-  }
-
-  getHeroes(): void {
-    this.heroService.getHeroes()
-      .subscribe(heroes => this.heroes = heroes);
   }
 }
