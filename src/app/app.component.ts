@@ -7,7 +7,7 @@ import { MessagesComponent } from './messages/messages.component';
     imports: [RouterLink, RouterOutlet, MessagesComponent],
     templateUrl: './app.component.html',
     changeDetection: ChangeDetectionStrategy.Eager,
-    styleUrl: './app.component.scss'
+    styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
   title = 'Tour of Heroes';
