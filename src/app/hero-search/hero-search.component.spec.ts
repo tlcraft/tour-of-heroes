@@ -1,4 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { beforeEach, describe, expect, it  } from 'vitest';
 import { HeroSearchComponent } from './hero-search.component';
 import { provideHttpClient, withXhr } from '@angular/common/http';
 
