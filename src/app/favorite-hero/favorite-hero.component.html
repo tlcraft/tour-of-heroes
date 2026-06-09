@@ -1,0 +1,7 @@
+<label for="hero-name">Favorite Hero Name:</label>
+<input id="hero-name" #heroName />
+<button (click)="setFavoriteHero(heroName.value)">
+  Set Favorite Hero
+</button>
+<p>Your favorite hero is: {{ getFavoriteHero() }}</p>
+<p>Number of times you've set your favorite hero: {{ getNumberOfTimesSet() }}</p>
