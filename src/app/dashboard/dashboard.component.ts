@@ -3,11 +3,12 @@ import { Hero } from '../hero';
 import { HeroService } from '../hero.service';
 import { RouterModule } from '@angular/router';
 import { HeroSearchComponent } from '../hero-search/hero-search.component';
+import { FavoriteHeroComponent } from "../favorite-hero/favorite-hero.component";
 
 
 @Component({
     selector: 'app-dashboard',
-    imports: [RouterModule, HeroSearchComponent],
+    imports: [RouterModule, HeroSearchComponent, FavoriteHeroComponent],
     templateUrl: './dashboard.component.html',
     changeDetection: ChangeDetectionStrategy.Eager,
     styleUrls: ['./dashboard.component.scss']
