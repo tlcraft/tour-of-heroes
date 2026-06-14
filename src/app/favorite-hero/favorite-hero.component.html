@@ -1,6 +1,15 @@
 <h2>Favorite Hero</h2>
 <label for="hero-name">Favorite Hero Name:</label>
-<input id="hero-name" #heroName />
+<input id="hero-name" #heroName (input)="search(heroName.value)"/>
+<ul class="search-result">
+  @for (hero of heroes$ | async; track hero.id) {
+    <li >
+      <a (click)="setFavoriteHero(hero.name)">
+        {{hero.name}}
+      </a>
+    </li>
+  }
+</ul>
 <button (click)="setFavoriteHero(heroName.value)">
   Set Favorite Hero
 </button>
