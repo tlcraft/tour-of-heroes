@@ -14,6 +14,7 @@ import { AsyncPipe } from '@angular/common';
 export class FavoriteHeroComponent {
   favoriteHeroService = inject(FavoriteHeroService);
   heroes$: Observable<Hero[]>;
+  favoriteHeroNameInput = '';
   private searchTerms = new Subject<string>();
   private heroService = inject(HeroService);
   
@@ -31,6 +32,7 @@ export class FavoriteHeroComponent {
   }
 
   search(term: string): void {
+    this.favoriteHeroNameInput = term;
     this.searchTerms.next(term);
   }
 
@@ -39,6 +41,7 @@ export class FavoriteHeroComponent {
   }
 
   setFavoriteHero(name: string) {
+    this.favoriteHeroNameInput = name;
     this.favoriteHeroService.setFavoriteHeroName(name);
   }
 
