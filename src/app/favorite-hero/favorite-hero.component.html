@@ -1,0 +1,17 @@
+<h2>Favorite Hero</h2>
+<label for="hero-name">Favorite Hero Name:</label>
+<input id="hero-name" [value]="favoriteHeroNameInput" (input)="search($any($event.target).value)"/>
+<ul class="search-result">
+  @for (hero of heroes$ | async; track hero.id) {
+    <li >
+      <a (click)="setFavoriteHero(hero.name)">
+        {{hero.name}}
+      </a>
+    </li>
+  }
+</ul>
+<button (click)="setFavoriteHero(favoriteHeroNameInput)">
+  Set Favorite Hero
+</button>
+<p>Your favorite hero is: {{ getFavoriteHero() }}</p>
+<p>Number of times you've set your favorite hero: {{ getNumberOfTimesSet() }}</p>

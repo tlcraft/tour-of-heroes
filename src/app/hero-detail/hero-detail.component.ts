@@ -6,10 +6,11 @@ import { ActivatedRoute } from '@angular/router';
 import { CommonModule, Location, UpperCasePipe } from '@angular/common';
 import { HeroService } from '../hero.service';
 import { FormsModule } from '@angular/forms';
+import { FavoriteHeroComponent } from "../favorite-hero/favorite-hero.component";
 
 @Component({
     selector: 'app-hero-detail',
-    imports: [UpperCasePipe, CommonModule, FormsModule],
+    imports: [UpperCasePipe, CommonModule, FormsModule, FavoriteHeroComponent],
     templateUrl: './hero-detail.component.html',
     changeDetection: ChangeDetectionStrategy.Eager,
     styleUrls: ['./hero-detail.component.scss']
